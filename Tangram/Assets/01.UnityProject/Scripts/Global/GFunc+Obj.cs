@@ -100,4 +100,16 @@ public static partial class GFunc
         return component_;
     }       // GetComponentMust()
 
+    //! RectTranstform을 찾아서 리턴하는 함수
+    public static RectTransform GetRect(this GameObject obj_)
+    {
+        return obj_.GetComponentMust<RectTransform>();
+    }       // GetRect()
+
+    //! 오브젝트의 앵커 포지션을 연산하는 함수
+    public static void AddAnchoredPos(this GameObject obj_,Vector2 position2D)
+    {
+        obj_.GetRect().anchoredPosition += position2D;
+    }           // AddAnchoredPos
+
 }
